@@ -1,0 +1,97 @@
+
+<html>
+<head>
+<title>Registration Validation form</title>
+</head>
+<body bgcolor="silver">
+<script>
+function mydata()
+{
+ var f=document.getElementById("fn").value;
+ var l=document.getElementById("ln").value;
+ var a=document.getElementById("ad").value;
+ var e=document.getElementById("em").value;
+ var m=document.getElementById("mb").value;
+ var p=document.getElementById("ps").value;
+ var cp=document.getElementById("cp2").value;
+ 
+ if(f=="" || l==""||a==""||e==""||m==""||p==""||cp=="")
+ {
+     alert("all fields are mandatory");
+     return false;
+ }
+ else if(p.length<8||p.length>8)
+ {
+     alert("Password length is set to 8n digits !");
+     return false;
+ }n
+ else if(m.length<10||m.length>10)
+ {
+     alert("Number should be 10 digits");
+     return false;
+ }
+ else if(isNaN(m))
+ {
+     alert("Only Number are allowed ! Please Enter valid  Number");
+     return false;
+ }
+ else if(p!=cp)
+ {
+    alert("Please Enter the same Password");
+	return false;
+ }
+ else if((e.charAt(e.length-4)!='.')&&(e.charAt(e.length-3)!='.'))
+ {
+    alert("Envalid E-mail ! please valid email");
+	return false;
+ }
+ else
+ {
+    true;
+ }
+ alert("Form Submitted Successfully...");
+   
+}
+</script>
+<form onsubmit="mydata()"action="abc.html">
+<fieldset>
+<center>
+<table>
+<h2> Registration Form</h2>
+<tr>
+<td><label>First Name:</label></td>
+<td><input type="text"id="fn"placeholder="Enter First Name"></td>
+</tr>
+</br>
+<tr>
+<td><label>Last Name:</label></td>
+<td><input type="text"id="ln"placeholder="Enter Last Name"/></td>
+<tr>
+<td> <label> Address:</label></td>
+<td><input type="text" id="ad" placeholder="Enter Address"/></td>
+</tr>
+<tr>
+<td><label>E-mail ID:</label></td>
+<td><input type="text"id="em"placeholder="Enter E-mail"/></td>
+</tr>
+<tr>
+<td> <label>Mobile NO:</label></td>
+<td><input type"text" id="mb" placeholder="contact no"/></td>
+</tr>
+<tr>
+<td><label> Password:</label>
+<td> <input type="text" id="ps" placeholder="P"></td>
+</tr>
+<tr>
+<td><label>Conform Password:</label>
+<td><input type="text" id="cp2" placeholder="Conform Password">
+</table>
+<br>
+<input type="button" value="submit" onclick="mydata()">
+<input type="button"value="reset">
+</center>
+</fieldset>
+</form>
+</body>
+</html>
+
